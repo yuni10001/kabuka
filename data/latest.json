@@ -1,8 +1,8 @@
 {
   "target_date": "2026-11-04",
-  "fetched_at_jst": "2026-11-04 14:00",
+  "fetched_at_jst": "2026-11-04 18:37",
   "ok": 4,
-  "total": 5,
+  "total": 4,
   "items": [
     {
       "name": "ソフトバンクグループ",
@@ -12,11 +12,11 @@
       "open": 4340.0,
       "high": 4344.0,
       "low": 3967.0,
-      "close": 4051.0,
+      "close": 4269.0,
       "prev_close": 4410.0,
-      "change": -359.0,
-      "change_pct": -8.14,
-      "volume": 43823200,
+      "change": -141.0,
+      "change_pct": -3.2,
+      "volume": 64953600,
       "source": "Yahoo Finance"
     },
     {
@@ -25,13 +25,13 @@
       "date": "2026-11-04",
       "status": "ok",
       "open": 1202.0,
-      "high": 1216.0,
+      "high": 1224.0,
       "low": 1193.0,
-      "close": 1205.5,
+      "close": 1218.5,
       "prev_close": 1204.5,
-      "change": 1.0,
-      "change_pct": 0.08,
-      "volume": 5929700,
+      "change": 14.0,
+      "change_pct": 1.16,
+      "volume": 11524600,
       "source": "Yahoo Finance"
     },
     {
@@ -42,11 +42,11 @@
       "open": 3500.0,
       "high": 3564.0,
       "low": 3491.0,
-      "close": 3538.0,
+      "close": 3511.0,
       "prev_close": 3482.0,
-      "change": 56.0,
-      "change_pct": 1.61,
-      "volume": 4025500,
+      "change": 29.0,
+      "change_pct": 0.83,
+      "volume": 7239500,
       "source": "Yahoo Finance"
     },
     {
@@ -57,23 +57,12 @@
       "open": 62973.16,
       "high": 63105.47,
       "low": 60030.1,
-      "close": 60590.22,
+      "close": 62188.63,
       "prev_close": 63081.86,
-      "change": -2491.64,
-      "change_pct": -3.95,
+      "change": -893.23,
+      "change_pct": -1.42,
       "volume": null,
       "source": "Yahoo Finance"
-    },
-    {
-      "name": "TOPIX",
-      "code": "TOPIX",
-      "date": "2026-11-04",
-      "status": "not_found",
-      "errors": [
-        "yfinance: データなし",
-        "yahoo(query2): HTTP Error 429: Too Many Requests",
-        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-      ]
     }
   ]
 }
