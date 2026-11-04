@@ -1,0 +1,58 @@
+{
+  "target_date": "2026-11-04",
+  "fetched_at_jst": "2026-11-04 13:52",
+  "ok": 0,
+  "total": 5,
+  "items": [
+    {
+      "name": "ソフトバンクグループ",
+      "code": "9984",
+      "date": "2026-11-04",
+      "status": "not_found",
+      "errors": [
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
+    },
+    {
+      "name": "イオン",
+      "code": "8267",
+      "date": "2026-11-04",
+      "status": "not_found",
+      "errors": [
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
+    },
+    {
+      "name": "オリエンタルランド",
+      "code": "4661",
+      "date": "2026-11-04",
+      "status": "not_found",
+      "errors": [
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
+    },
+    {
+      "name": "日経平均",
+      "code": "N225",
+      "date": "2026-11-04",
+      "status": "not_found",
+      "errors": [
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
+    },
+    {
+      "name": "TOPIX",
+      "code": "TOPIX",
+      "date": "2026-11-04",
+      "status": "not_found",
+      "errors": [
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
+    }
+  ]
+}
