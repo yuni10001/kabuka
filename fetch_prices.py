@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """東証の大引け後に、指定銘柄の当日の株価を取得して data/ に保存する。
 
-- 取得元: Yahoo Finance（第一候補）→ Stooq（予備）
+- 取得元: yfinance（第一候補）→ Yahoo Finance 直接 → Stooq（予備）
 - 出力:
     data/latest.json   … 最新の取得結果（Claude が毎日読む）
     data/history.csv   … 毎日の記録（日付・コードで重複なし）
@@ -40,6 +40,31 @@ def http_get(url: str, timeout: int = 20) -> bytes:
 
 def rnd(x):
     return None if x is None else round(float(x), 2)
+
+
+def from_yfinance(symbol: str, today: str):
+    """yfinance（ブラウザに近い形で Yahoo Finance にアクセスするライブラリ）で取得。"""
+    try:
+        import yfinance as yf
+    except ImportError:
+        return None, "yfinance: 未インストール"
+    try:
+        df = yf.Ticker(symbol).history(period="10d", interval="1d", auto_adjust=False)
+        if df is None or df.empty:
+            return None, "yfinance: データなし"
+        rows = []
+        for idx, r in df.iterrows():
+            d = idx.tz_convert(JST) if idx.tzinfo else idx
+            rows.append({"date": d.strftime("%Y-%m-%d"), "open": r["Open"], "high": r["High"],
+                         "low": r["Low"], "close": r["Close"], "volume": r.get("Volume")})
+        today_rows = [r for r in rows if r["date"] == today]
+        if not today_rows:
+            return None, f"yfinance: {today} の行なし（最新 {rows[-1]['date']}）"
+        prev = [r for r in rows if r["date"] < today]
+        return {**today_rows[-1], "prev_close": prev[-1]["close"] if prev else None,
+                "source": "Yahoo Finance"}, None
+    except Exception as e:  # noqa: BLE001
+        return None, f"yfinance: {e}"
 
 
 def from_yahoo(symbol: str, today: str):
@@ -111,7 +136,8 @@ def main() -> int:
 
     for t in TARGETS:
         data, errors = None, []
-        for fn, sym in ((from_yahoo, t["yahoo"]), (from_stooq, t["stooq"])):
+        for fn, sym in ((from_yfinance, t["yahoo"]), (from_yahoo, t["yahoo"]),
+                        (from_stooq, t["stooq"])):
             data, err = fn(sym, today)
             if data:
                 break
