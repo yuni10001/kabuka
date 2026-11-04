@@ -25,7 +25,6 @@ TARGETS = [
     {"name": "イオン", "code": "8267", "yahoo": "8267.T", "stooq": "8267.jp"},
     {"name": "オリエンタルランド", "code": "4661", "yahoo": "4661.T", "stooq": "4661.jp"},
     {"name": "日経平均", "code": "N225", "yahoo": "^N225", "stooq": "^nkx"},
-    {"name": "TOPIX", "code": "TOPIX", "yahoo": "^TOPX", "stooq": "^tpx"},
 ]
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
