@@ -24,6 +24,10 @@ TARGETS = [
     {"name": "ソフトバンクグループ", "code": "9984", "yahoo": "9984.T", "stooq": "9984.jp"},
     {"name": "イオン", "code": "8267", "yahoo": "8267.T", "stooq": "8267.jp"},
     {"name": "オリエンタルランド", "code": "4661", "yahoo": "4661.T", "stooq": "4661.jp"},
+    {"name": "信越化学工業", "code": "4063", "yahoo": "4063.T", "stooq": "4063.jp"},
+    {"name": "ラウンドワン", "code": "4680", "yahoo": "4680.T", "stooq": "4680.jp"},
+    {"name": "オリックス", "code": "8591", "yahoo": "8591.T", "stooq": "8591.jp"},
+    {"name": "日本郵政", "code": "6178", "yahoo": "6178.T", "stooq": "6178.jp"},
     {"name": "日経平均", "code": "N225", "yahoo": "^N225", "stooq": "^nkx"},
 ]
 
