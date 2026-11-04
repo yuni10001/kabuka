@@ -1,8 +1,8 @@
 {
   "target_date": "2026-11-04",
-  "fetched_at_jst": "2026-11-04 18:37",
-  "ok": 4,
-  "total": 4,
+  "fetched_at_jst": "2026-11-04 20:00",
+  "ok": 8,
+  "total": 8,
   "items": [
     {
       "name": "ソフトバンクグループ",
@@ -47,6 +47,66 @@
       "change": 29.0,
       "change_pct": 0.83,
       "volume": 7239500,
+      "source": "Yahoo Finance"
+    },
+    {
+      "name": "信越化学工業",
+      "code": "4063",
+      "date": "2026-11-04",
+      "status": "ok",
+      "open": 5875.0,
+      "high": 5962.0,
+      "low": 5696.0,
+      "close": 5799.0,
+      "prev_close": 5921.0,
+      "change": -122.0,
+      "change_pct": -2.06,
+      "volume": 10552800,
+      "source": "Yahoo Finance"
+    },
+    {
+      "name": "ラウンドワン",
+      "code": "4680",
+      "date": "2026-11-04",
+      "status": "ok",
+      "open": 1260.0,
+      "high": 1285.0,
+      "low": 1235.0,
+      "close": 1260.0,
+      "prev_close": 1268.5,
+      "change": -8.5,
+      "change_pct": -0.67,
+      "volume": 1483900,
+      "source": "Yahoo Finance"
+    },
+    {
+      "name": "オリックス",
+      "code": "8591",
+      "date": "2026-11-04",
+      "status": "ok",
+      "open": 5780.0,
+      "high": 5823.0,
+      "low": 5576.0,
+      "close": 5699.0,
+      "prev_close": 5747.0,
+      "change": -48.0,
+      "change_pct": -0.84,
+      "volume": 3954800,
+      "source": "Yahoo Finance"
+    },
+    {
+      "name": "日本郵政",
+      "code": "6178",
+      "date": "2026-11-04",
+      "status": "ok",
+      "open": 2390.0,
+      "high": 2397.5,
+      "low": 2323.5,
+      "close": 2381.5,
+      "prev_close": 2348.5,
+      "change": 33.0,
+      "change_pct": 1.41,
+      "volume": 4622300,
       "source": "Yahoo Finance"
     },
     {
