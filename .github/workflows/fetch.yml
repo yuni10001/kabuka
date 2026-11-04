@@ -1,0 +1,32 @@
+name: 株価取得
+
+on:
+  schedule:
+    # 平日 16:10 と 16:40（日本時間）に実行。GitHub の時刻は UTC なので 9 時間引いて書く
+    - cron: "10 7 * * 1-5"
+    - cron: "40 7 * * 1-5"
+  workflow_dispatch: {}   # 手動実行ボタン
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 株価を取得
+        run: python fetch_prices.py
+
+      - name: 結果を保存
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "株価 $(TZ=Asia/Tokyo date +%F)"
+          git push
