@@ -2,11 +2,16 @@ name: 株価取得
 
 on:
   schedule:
-    # 平日 15:55〜16:55（日本時間）に15分おき。GitHub の時刻指定は遅れたり飛ばされたりするので複数回。
+    # 平日 15:50〜16:55（日本時間）に5回。GitHub の時刻指定は遅れたり飛ばされたりするので複数回。
     # GitHub の時刻は UTC なので 9 時間引いて書く
     - cron: "50 6 * * 1-5"
     - cron: "10,25,40,55 7 * * 1-5"
   workflow_dispatch: {}   # 手動実行ボタン
+
+# 前の回が終わる前に次の回が始まっても、順番待ちにして同時に書き込まないようにする
+concurrency:
+  group: stock-price-fetch
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -36,7 +41,11 @@ jobs:
           git commit -m "株価 $(TZ=Asia/Tokyo date +%F)"
           # GitHub 側の一時的なエラーに備えて最大5回やり直す
           for i in 1 2 3 4 5; do
-            git pull --rebase -q origin main && git push && exit 0
-            echo "push 失敗。${i}回目、15秒後に再試行"; sleep 15
+            if git pull --rebase -q origin main && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "push 失敗。${i}回目、15秒後に再試行"
+            sleep 15
           done
           exit 1
