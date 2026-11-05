@@ -1,128 +1,96 @@
 {
-  "target_date": "2026-11-05",
-  "fetched_at_jst": "2026-11-05 20:03",
-  "ok": 8,
+  "target_date": "2026-11-06",
+  "fetched_at_jst": "2026-11-06 00:23",
+  "ok": 0,
   "total": 8,
   "items": [
     {
       "name": "ソフトバンクグループ",
       "code": "9984",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 4215.0,
-      "high": 4215.0,
-      "low": 3930.0,
-      "close": 3980.0,
-      "prev_close": 4269.0,
-      "change": -289.0,
-      "change_pct": -6.77,
-      "volume": 59524600,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     },
     {
       "name": "イオン",
       "code": "8267",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 1243.0,
-      "high": 1309.5,
-      "low": 1242.5,
-      "close": 1309.5,
-      "prev_close": 1218.5,
-      "change": 91.0,
-      "change_pct": 7.47,
-      "volume": 18311600,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     },
     {
       "name": "オリエンタルランド",
       "code": "4661",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 3641.0,
-      "high": 3737.0,
-      "low": 3635.0,
-      "close": 3712.0,
-      "prev_close": 3511.0,
-      "change": 201.0,
-      "change_pct": 5.72,
-      "volume": 8054600,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     },
     {
       "name": "信越化学工業",
       "code": "4063",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 5850.0,
-      "high": 5867.0,
-      "low": 5637.0,
-      "close": 5693.0,
-      "prev_close": 5799.0,
-      "change": -106.0,
-      "change_pct": -1.83,
-      "volume": 9380300,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     },
     {
       "name": "ラウンドワン",
       "code": "4680",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 1290.0,
-      "high": 1329.0,
-      "low": 1286.5,
-      "close": 1312.5,
-      "prev_close": 1260.0,
-      "change": 52.5,
-      "change_pct": 4.17,
-      "volume": 1475700,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     },
     {
       "name": "オリックス",
       "code": "8591",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 5870.0,
-      "high": 5947.0,
-      "low": 5791.0,
-      "close": 5858.0,
-      "prev_close": 5699.0,
-      "change": 159.0,
-      "change_pct": 2.79,
-      "volume": 4859800,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     },
     {
       "name": "日本郵政",
       "code": "6178",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 2432.0,
-      "high": 2460.0,
-      "low": 2410.0,
-      "close": 2433.0,
-      "prev_close": 2381.5,
-      "change": 51.5,
-      "change_pct": 2.16,
-      "volume": 3576200,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     },
     {
       "name": "日経平均",
       "code": "N225",
-      "date": "2026-11-05",
-      "status": "ok",
-      "open": 62384.73,
-      "high": 62653.98,
-      "low": 60786.19,
-      "close": 61077.9,
-      "prev_close": 62188.63,
-      "change": -1110.73,
-      "change_pct": -1.79,
-      "volume": null,
-      "source": "Yahoo Finance"
+      "date": "2026-11-06",
+      "status": "not_found",
+      "errors": [
+        "yfinance: 2026-11-06 の行なし（最新 2026-11-05）",
+        "yahoo(query2): HTTP Error 429: Too Many Requests",
+        "stooq: 想定外の応答 '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
+      ]
     }
   ]
 }
