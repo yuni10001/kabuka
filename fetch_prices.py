@@ -45,7 +45,7 @@ def rnd(x):
     return None if x is None else round(float(x), 2)
 
 
-def from_yfinance(symbol: str, today: str):
+def from_yfinance(symbol: str, today: str, allow_latest: bool = False):
     """yfinance（ブラウザに近い形で Yahoo Finance にアクセスするライブラリ）で取得。"""
     try:
         import yfinance as yf
@@ -60,6 +60,8 @@ def from_yfinance(symbol: str, today: str):
             d = idx.tz_convert(JST) if idx.tzinfo else idx
             rows.append({"date": d.strftime("%Y-%m-%d"), "open": r["Open"], "high": r["High"],
                          "low": r["Low"], "close": r["Close"], "volume": r.get("Volume")})
+        if allow_latest and not any(r["date"] == today for r in rows):
+            today = rows[-1]["date"]  # 当日分がまだない（深夜・休日など）→ 最新の取引日を使う
         today_rows = [r for r in rows if r["date"] == today]
         if not today_rows:
             return None, f"yfinance: {today} の行なし（最新 {rows[-1]['date']}）"
@@ -145,7 +147,12 @@ def main() -> int:
             if data:
                 break
             errors.append(err)
-        item = {"name": t["name"], "code": t["code"], "date": today}
+        if not data and not os.environ.get("TARGET_DATE"):
+            # 当日分が見つからない場合は、最新の取引日のデータを日付つきで保存する
+            data, err = from_yfinance(t["yahoo"], today, allow_latest=True)
+            if not data:
+                errors.append(err)
+        item = {"name": t["name"], "code": t["code"], "date": data["date"] if data else today}
         if data:
             ok_count += 1
             close, prev = data["close"], data["prev_close"]
