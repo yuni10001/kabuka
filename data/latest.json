@@ -1,6 +1,6 @@
 {
-  "target_date": "2026-11-06",
-  "fetched_at_jst": "2026-11-06 23:57",
+  "target_date": "2026-11-09",
+  "fetched_at_jst": "2026-11-09 06:38",
   "ok": 8,
   "total": 8,
   "items": [
@@ -121,7 +121,7 @@
       "prev_close": 61077.9,
       "change": -3643.13,
       "change_pct": -5.96,
-      "volume": null,
+      "volume": 314400000,
       "source": "Yahoo Finance"
     }
   ]
