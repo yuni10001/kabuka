@@ -1,8 +1,8 @@
 {
   "target_date": "2026-11-10",
-  "fetched_at_jst": "2026-11-10 17:28",
-  "ok": 8,
-  "total": 8,
+  "fetched_at_jst": "2026-11-10 17:38",
+  "ok": 9,
+  "total": 9,
   "items": [
     {
       "name": "ソフトバンクグループ",
@@ -107,6 +107,21 @@
       "change": 46.5,
       "change_pct": 2.02,
       "volume": 3217300,
+      "source": "Yahoo Finance"
+    },
+    {
+      "name": "東京センチュリー",
+      "code": "8439",
+      "date": "2026-11-10",
+      "status": "ok",
+      "open": 2596.0,
+      "high": 2630.0,
+      "low": 2538.5,
+      "close": 2544.5,
+      "prev_close": 2446.0,
+      "change": 98.5,
+      "change_pct": 4.03,
+      "volume": 1890400,
       "source": "Yahoo Finance"
     },
     {
