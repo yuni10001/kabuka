@@ -11,6 +11,7 @@
 import csv
 import io
 import json
+import math
 import os
 import sys
 import time
@@ -41,6 +42,13 @@ def http_get(url: str, timeout: int = 20) -> bytes:
         return r.read()
 
 
+def is_num(x) -> bool:
+    try:
+        return x is not None and not math.isnan(float(x))
+    except (TypeError, ValueError):
+        return False
+
+
 def rnd(x):
     return None if x is None else round(float(x), 2)
 
@@ -57,6 +65,8 @@ def from_yfinance(symbol: str, today: str, allow_latest: bool = False):
             return None, "yfinance: データなし"
         rows = []
         for idx, r in df.iterrows():
+            if not is_num(r["Close"]):
+                continue  # 値が空（NaN）の行は使わない
             d = idx.tz_convert(JST) if idx.tzinfo else idx
             rows.append({"date": d.strftime("%Y-%m-%d"), "open": r["Open"], "high": r["High"],
                          "low": r["Low"], "close": r["Close"], "volume": r.get("Volume")})
@@ -153,6 +163,9 @@ def main() -> int:
             if not data:
                 errors.append(err)
         item = {"name": t["name"], "code": t["code"], "date": data["date"] if data else today}
+        if data and not is_num(data.get("close")):
+            errors.append("終値が空（NaN）")
+            data = None
         if data:
             ok_count += 1
             close, prev = data["close"], data["prev_close"]
@@ -192,8 +205,33 @@ def main() -> int:
             for r in csv.DictReader(f):
                 hist[(r["date"], r["code"])] = r
     for it in items:
-        if it["status"] == "ok":
+        if it["status"] == "ok" and is_num(it.get("close")):
             hist[(it["date"], it["code"])] = {k: it.get(k) for k in fields}
+    # 直近10日分で、履歴が抜けている・値が空の日を埋め直す
+    for t in TARGETS:
+        try:
+            import yfinance as yf
+            df = yf.Ticker(t["yahoo"]).history(period="10d", interval="1d", auto_adjust=False)
+        except Exception:  # noqa: BLE001
+            continue
+        prev_close = None
+        for idx, r in df.iterrows():
+            if not is_num(r["Close"]):
+                continue
+            d = (idx.tz_convert(JST) if idx.tzinfo else idx).strftime("%Y-%m-%d")
+            close = float(r["Close"])
+            old = hist.get((d, t["code"]))
+            if d < today and (old is None or not is_num(old.get("close"))) and prev_close:
+                change = close - prev_close
+                hist[(d, t["code"])] = {
+                    "date": d, "code": t["code"], "name": t["name"],
+                    "open": rnd(r["Open"]), "high": rnd(r["High"]), "low": rnd(r["Low"]),
+                    "close": rnd(close), "prev_close": rnd(prev_close), "change": rnd(change),
+                    "change_pct": rnd(change / prev_close * 100),
+                    "volume": int(r["Volume"]) if is_num(r.get("Volume")) else None,
+                    "source": "Yahoo Finance",
+                }
+            prev_close = close
     with open(hist_path, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
