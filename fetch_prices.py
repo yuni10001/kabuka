@@ -29,6 +29,7 @@ TARGETS = [
     {"name": "ラウンドワン", "code": "4680", "yahoo": "4680.T", "stooq": "4680.jp"},
     {"name": "オリックス", "code": "8591", "yahoo": "8591.T", "stooq": "8591.jp"},
     {"name": "日本郵政", "code": "6178", "yahoo": "6178.T", "stooq": "6178.jp"},
+    {"name": "東京センチュリー", "code": "8439", "yahoo": "8439.T", "stooq": "8439.jp"},
     {"name": "日経平均", "code": "N225", "yahoo": "^N225", "stooq": "^nkx"},
 ]
 
