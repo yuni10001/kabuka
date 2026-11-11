@@ -1,6 +1,6 @@
 {
   "target_date": "2026-11-11",
-  "fetched_at_jst": "2026-11-11 16:00",
+  "fetched_at_jst": "2026-11-11 16:20",
   "ok": 9,
   "total": 9,
   "items": [
@@ -10,7 +10,7 @@
       "date": "2026-11-11",
       "status": "ok",
       "open": 3592.0,
-      "high": 3903.0,
+      "high": 3902.0,
       "low": 3465.0,
       "close": 3855.0,
       "prev_close": 3872.0,
@@ -100,7 +100,7 @@
       "date": "2026-11-11",
       "status": "ok",
       "open": 2388.0,
-      "high": 2407.0,
+      "high": 2406.5,
       "low": 2364.0,
       "close": 2391.5,
       "prev_close": 2349.5,
