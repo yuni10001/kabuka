@@ -30,7 +30,13 @@ TARGETS = [
     {"name": "オリックス", "code": "8591", "yahoo": "8591.T", "stooq": "8591.jp"},
     {"name": "日本郵政", "code": "6178", "yahoo": "6178.T", "stooq": "6178.jp"},
     {"name": "東京センチュリー", "code": "8439", "yahoo": "8439.T", "stooq": "8439.jp"},
-    {"name": "日経平均", "code": "N225", "yahoo": "^N225", "stooq": "^nkx"},
+    {"name": "日経平均", "code": "N225", "yahoo": "^N225", "stooq": "^nkx"},   
+    {"name": "良品計画", "code": "7453", "yahoo": "7453.T", "stooq": "7453.jp"},
+    {"name": "TOPIX（ETF 1306）", "code": "TOPIX", "yahoo": "1306.T", "stooq": "1306.jp"},
+    {"name": "TOPIX-17 素材・化学（ETF 1620）", "code": "S17_1620", "yahoo": "1620.T", "stooq": "1620.jp"},
+    {"name": "TOPIX-17 情報通信・サービスその他（ETF 1626）", "code": "S17_1626", "yahoo": "1626.T", "stooq": "1626.jp"},
+    {"name": "TOPIX-17 小売（ETF 1630）", "code": "S17_1630", "yahoo": "1630.T", "stooq": "1630.jp"},
+    {"name": "TOPIX-17 金融（除く銀行）（ETF 1632）", "code": "S17_1632", "yahoo": "1632.T", "stooq": "1632.jp"},
 ]
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
