@@ -1,0 +1,52 @@
+name: 過去データ取得（手動）
+
+on:
+  workflow_dispatch:
+    inputs:
+      period:
+        description: "取得する期間（例: 5y, 10y, max）"
+        required: false
+        default: "10y"
+
+# 毎日の株価取得と同時に書き込まないよう、同じ順番待ちの列に並べる
+concurrency:
+  group: stock-price-fetch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: ライブラリをインストール
+        run: pip install --quiet yfinance
+
+      - name: 過去の株価を取得
+        env:
+          PERIOD: ${{ github.event.inputs.period }}
+        run: python backfill_history.py
+
+      - name: 結果を保存
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/long/
+          git diff --cached --quiet && exit 0
+          git commit -m "過去データ $(TZ=Asia/Tokyo date +%F)"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase -q origin main && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "push 失敗。${i}回目、15秒後に再試行"
+            sleep 15
+          done
+          exit 1
