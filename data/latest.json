@@ -1,8 +1,8 @@
 {
   "target_date": "2026-11-20",
-  "fetched_at_jst": "2026-11-20 16:20",
-  "ok": 15,
-  "total": 15,
+  "fetched_at_jst": "2026-11-20 17:06",
+  "ok": 17,
+  "total": 17,
   "items": [
     {
       "name": "ソフトバンクグループ",
@@ -152,6 +152,36 @@
       "change": -93.0,
       "change_pct": -1.89,
       "volume": 2903700,
+      "source": "Yahoo Finance"
+    },
+    {
+      "name": "FOOD & LIFE COMPANIES（スシロー）",
+      "code": "3563",
+      "date": "2026-11-20",
+      "status": "ok",
+      "open": 6218.0,
+      "high": 6262.0,
+      "low": 5908.0,
+      "close": 5951.0,
+      "prev_close": 6318.0,
+      "change": -367.0,
+      "change_pct": -5.81,
+      "volume": 3434600,
+      "source": "Yahoo Finance"
+    },
+    {
+      "name": "積水化学工業",
+      "code": "4204",
+      "date": "2026-11-20",
+      "status": "ok",
+      "open": 2615.0,
+      "high": 2632.0,
+      "low": 2569.0,
+      "close": 2569.0,
+      "prev_close": 2658.0,
+      "change": -89.0,
+      "change_pct": -3.35,
+      "volume": 1522100,
       "source": "Yahoo Finance"
     },
     {
