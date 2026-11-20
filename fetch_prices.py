@@ -32,6 +32,8 @@ TARGETS = [
     {"name": "東京センチュリー", "code": "8439", "yahoo": "8439.T", "stooq": "8439.jp"},
     {"name": "日経平均", "code": "N225", "yahoo": "^N225", "stooq": "^nkx"},   
     {"name": "良品計画", "code": "7453", "yahoo": "7453.T", "stooq": "7453.jp"},
+    {"name": "FOOD & LIFE COMPANIES（スシロー）", "code": "3563", "yahoo": "3563.T", "stooq": "3563.jp"},
+    {"name": "積水化学工業", "code": "4204", "yahoo": "4204.T", "stooq": "4204.jp"},
     {"name": "TOPIX（ETF 1306）", "code": "TOPIX", "yahoo": "1306.T", "stooq": "1306.jp"},
     {"name": "TOPIX-17 素材・化学（ETF 1620）", "code": "S17_1620", "yahoo": "1620.T", "stooq": "1620.jp"},
     {"name": "TOPIX-17 情報通信・サービスその他（ETF 1626）", "code": "S17_1626", "yahoo": "1626.T", "stooq": "1626.jp"},
